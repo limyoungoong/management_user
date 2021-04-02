@@ -16,10 +16,10 @@ function App() {
   {
     'id':'2',
     'image':'https://placeimg.com/64/64/2',
-    'name':'성시경',
+    'name':'김민성',
     'birthday':'900729',
     'gender':'남자',
-    'job' : '직장인'
+    'job' : '변호사'
 
   },{
     'id':'3',
