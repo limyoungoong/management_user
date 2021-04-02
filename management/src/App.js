@@ -1,24 +1,25 @@
-import logo from './logo.svg';
+import React, {Component} from 'react';
+import Customer from './components/Customer';
 import './App.css';
 
 function App() {
+  const customer ={
+    'name':'임영웅',
+    'birthday':'900729',
+    'gender':'남자',
+    'job' : '직장인'
+
+  }
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Customer
+      name={customer.name}
+      birthday={customer.birthday}
+      gender={customer.gender}
+      job ={customer.job}
+    
+    ></Customer>
   );
 }
 
