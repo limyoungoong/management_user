@@ -1,11 +1,5 @@
 import React from "react";
 import { post } from "axios";
-import Dialog from "@material-ui/core/Dialog";
-import DialogActions from "@material-ui/core/DialogActions";
-import DialogTitle from "@material-ui/core/DialogTitle";
-import DialogContent from "@material-ui/core/DialogContent";
-import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
 import { withStyles } from "@material-ui/core/styles";
 
 const styles = theme => ({
@@ -33,6 +27,7 @@ class CustomerAdd extends React.Component{
         this.addCustomer()
             .then((response) => {
                 console.log(response.data);
+                this.props.stateRefresh();
         });
         this.setState({
             file: null,
@@ -42,7 +37,6 @@ class CustomerAdd extends React.Component{
             job: "",
             fileName: ""
         })
-        window.location.reload();
     }
 
     handleFileChange = (e) => {

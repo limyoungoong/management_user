@@ -33,9 +33,23 @@ class App extends Component {
 
   // State는 변경 될 수 있는 대상에 대한 변수 정의할 때 사용
   // Props는 변경되지 않는   정보에 대한 변수 정의할 때 사용
-  state = {
-    customers : "",
-    completed : 0 
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      customers : '',
+      completed : 0
+    }
+  }
+
+  stateRefresh = () => {
+    this.setState({
+      customers : '',
+      completed : 0
+    });
+    this.callApi()
+      .then(res => this.setState({customers:res}))
+      .catch(err => console.log(err));
   }
 
   // [componentDidMount]는 모든 Component가 준비가 된 이후에 실행됨
@@ -98,7 +112,7 @@ class App extends Component {
             </TableBody>
           </Table>
         </Paper>
-        <CustomerAdd /> 
+        <CustomerAdd stateRefresh = {this.stateRefresh} /> 
       </div>
       
 
